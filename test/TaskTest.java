@@ -36,4 +36,26 @@ class TaskTest {
         Task task = new Task();
         assertEquals("CBAAAA", task.reverseText("AAAABC"));
     }
+
+    @Test
+    void areEvenNumbers() {
+        Task task = new Task();
+        assertTrue(task.areEvenNumbers(new int[]{2, 4, 6, 8}));
+    }
+
+    @Test
+    void isPalindromeNumber() {
+        Task task = new Task();
+        assertTrue(task.isPalindromeNumber(3));
+        assertTrue(task.isPalindromeNumber(5));
+        assertTrue(task.isPalindromeNumber(101));
+        assertTrue(task.isPalindromeNumber(202));
+    }
+
+    @Test
+    void countSpaces() {
+        Task task = new Task();
+        assertEquals(1, task.countSpaces("Hello world."));
+        assertEquals(5, task.countSpaces("This text doesn't make a sense."));
+    }
 }

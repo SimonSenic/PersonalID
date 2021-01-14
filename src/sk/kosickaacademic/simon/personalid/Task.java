@@ -27,4 +27,34 @@ public class Task {
 
         return result;
     }
+
+    public boolean areEvenNumbers(int[] array){
+        int count=0;
+        for(int i=0; i<array.length; i++)
+            if(array[i]%2==0) count++;
+
+        if(count==array.length) return true;
+        else return false;
+    }
+
+    public boolean isPalindromeNumber(int number){
+        int x=number, y=0;
+        while(x>0){
+            y=y+(x%10);
+            y=y*10;
+            x=x/10;
+        }
+        y=y/10;
+
+        if(number==y) return true;
+        else return false;
+    }
+
+    public int countSpaces(String text){
+        int count=0;
+        for(int i=0; i<text.length(); i++)
+            if(text.charAt(i)==' ') count++;
+
+        return count;
+    }
 }
