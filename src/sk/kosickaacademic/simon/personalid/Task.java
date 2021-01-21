@@ -1,5 +1,7 @@
 package sk.kosickaacademic.simon.personalid;
 
+import java.util.Arrays;
+
 public class Task {
     public int Sum(int a, int b) {
 
@@ -56,5 +58,36 @@ public class Task {
             if(text.charAt(i)==' ') count++;
 
         return count;
+    }
+
+    public double termDeposit(int value, double interest, int period, boolean tax){
+        if(value<=0 || interest<0 || period<0) return 0;
+        if(interest==0 || period==0) return value;
+        for(int i=0; i<period; i++){
+            double profit = (interest/100.0)*value;
+            if(tax) profit*=0.8;
+            value+=profit;
+        }
+
+        return value;
+    }
+
+    public double priceForTransport(int distance, double consumption, double fuel){
+        if(distance<=0 || consumption<=0) return 0;
+        if(fuel==0) return 0;
+        double result;
+        result = distance/fuel*consumption;
+        result=Math.round(result*100.00)/100.00;
+
+        return result;
+    }
+
+    public int max(int[] array){
+        if(array==null || array.length==1) return 0;
+        int max=array[0], secondmax=0, count=1;
+        for(int i=1; i<array.length; i++) if(array[0]==array[i]) count++; if(count==array.length) return 0;
+        for(int i=1; i<array.length; i++) if(array[i]>max){ secondmax=max; max=array[i]; }
+
+        return secondmax;
     }
 }
